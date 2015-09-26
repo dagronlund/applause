@@ -13,7 +13,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.Scopes;
@@ -29,6 +31,9 @@ import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.java_websocket.client.WebSocketClient;
+import org.java_websocket.handshake.ServerHandshake;
+
 public class MainActivity extends AppCompatActivity implements
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener {
@@ -37,6 +42,8 @@ public class MainActivity extends AppCompatActivity implements
 
     private GoogleApiClient apiClient;
     private MediaPlayer mp = new MediaPlayer();
+
+    private WebSocketClient mWebSocketClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -161,7 +168,7 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /* Web socket for client side */
-    /*
+
     private void connectWebSocket() {
         URI uri;
         try {
@@ -170,7 +177,6 @@ public class MainActivity extends AppCompatActivity implements
             e.printStackTrace();
             return;
         }
-
         mWebSocketClient = new WebSocketClient(uri) {
             @Override
             public void onOpen(ServerHandshake serverHandshake) {
@@ -184,7 +190,7 @@ public class MainActivity extends AppCompatActivity implements
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        TextView textView = (TextView) findViewById(R.id.messages);
+                        TextView textView = (TextView) findViewById(R.id.editTextMessage);
                         textView.setText(textView.getText() + "\n" + message);
                     }
                 });
@@ -202,5 +208,10 @@ public class MainActivity extends AppCompatActivity implements
         };
         mWebSocketClient.connect();
     }
-    */
+
+    public void sendMessage(View view) {
+        EditText editText = (EditText)findViewById(R.id.editTextMessage);
+        mWebSocketClient.send(editText.getText().toString());
+        editText.setText("");
+    }
 }
