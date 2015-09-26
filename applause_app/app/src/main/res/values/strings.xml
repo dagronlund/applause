@@ -3,5 +3,9 @@
 
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+<<<<<<< HEAD
     <string name="title_activity_music_player">MusicPlayerActivity</string>
+=======
+    <string name="title_activity_websocket_client_activity">websocket_client_activity</string>
+>>>>>>> 914163a43f6ffd2788596f4cbafd65175808cb17
 </resources>
