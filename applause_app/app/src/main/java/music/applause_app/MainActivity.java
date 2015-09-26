@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.net.URI;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -34,11 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
->>>>>>> 8d1a3dec718871419feec92feb915dd4894abbee
+
     /* Web socket for client side */
 
     private void connectWebSocket() {
@@ -63,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-                        TextView textView = (TextView) findViewById(R.id.messages);
+                        TextView textView = (TextView)findViewById(R.id.messages);
                         textView.setText(textView.getText() + "\n" + message);
                     }
                 });
@@ -81,5 +79,5 @@ public class MainActivity extends AppCompatActivity {
         };
         mWebSocketClient.connect();
     }
->>>>>>> origin/master
+
 }
