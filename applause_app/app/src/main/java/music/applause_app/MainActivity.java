@@ -6,10 +6,17 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.util.Log;
+import android.widget.TextView;
+
+import org.java_websocket.client.WebSocketClient;
+import java.net.URI;
 import java.net.URISyntaxException;
+import org.java_websocket.handshake.ServerHandshake;
 
 public class MainActivity extends AppCompatActivity {
 
+    private WebSocketClient mWebSocketClient;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,7 +54,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
             return;
         }
-
         mWebSocketClient = new WebSocketClient(uri) {
             @Override
             public void onOpen(ServerHandshake serverHandshake) {
@@ -78,6 +84,12 @@ public class MainActivity extends AppCompatActivity {
             }
         };
         mWebSocketClient.connect();
+    }
+
+    public void sendMessage(View view) {
+        EditText editText = (EditText)findViewById(R.id.message);
+        mWebSocketClient.send(editText.getText().toString());
+        editText.setText("");
     }
 }
 
