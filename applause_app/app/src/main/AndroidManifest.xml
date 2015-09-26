@@ -16,6 +16,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".websocket_client_activity"
+            android:label="@string/title_activity_websocket_client_activity" >
+        </activity>
     </application>
 
 </manifest>
