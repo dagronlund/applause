@@ -37,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+    /* Web socket for client side */
 
     private void connectWebSocket() {
         URI uri;
