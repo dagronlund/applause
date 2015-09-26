@@ -168,7 +168,6 @@ public class MainActivity extends AppCompatActivity implements
     }
 
     /* Web socket for client side */
-
     private void connectWebSocket() {
         URI uri;
         try {
@@ -177,6 +176,7 @@ public class MainActivity extends AppCompatActivity implements
             e.printStackTrace();
             return;
         }
+
         mWebSocketClient = new WebSocketClient(uri) {
             @Override
             public void onOpen(ServerHandshake serverHandshake) {
