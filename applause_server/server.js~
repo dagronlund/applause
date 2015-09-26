@@ -29,7 +29,8 @@ var server = ws.createServer(function(connection) {
 	connection.state = 0
 	connection.partner = null
 	connection.on("text", function (str) {
-		if(connection.username === null) {
+		console.log(str);
+/*		if(connection.username === null) {
 		connection.username = str
 		} else {
 		switch(str.charAt(0)){
@@ -68,6 +69,6 @@ var server = ws.createServer(function(connection) {
 
 
 		}
-						          
+*/						          
 })
 server.listen(8081)

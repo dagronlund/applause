@@ -71,4 +71,5 @@ var server = ws.createServer(function(connection) {
 		}
 */						          
 })
+}
 server.listen(8081)
