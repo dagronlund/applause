@@ -1,11 +1,11 @@
 package music.applause_app;
 
-import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+<<<<<<< HEAD
 import android.util.Log;
 import android.widget.TextView;
 
@@ -14,6 +14,8 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import org.java_websocket.handshake.ServerHandshake;
 
+=======
+>>>>>>> origin/master
 public class MainActivity extends AppCompatActivity {
 
     private WebSocketClient mWebSocketClient;
@@ -44,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> 8d1a3dec718871419feec92feb915dd4894abbee
     /* Web socket for client side */
 
     private void connectWebSocket() {
@@ -92,4 +99,3 @@ public class MainActivity extends AppCompatActivity {
         editText.setText("");
     }
 }
-
