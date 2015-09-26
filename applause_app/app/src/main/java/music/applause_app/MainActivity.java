@@ -35,7 +35,10 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> 8d1a3dec718871419feec92feb915dd4894abbee
     /* Web socket for client side */
 
     private void connectWebSocket() {
