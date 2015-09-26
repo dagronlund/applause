@@ -33,9 +33,10 @@
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="70dp"
                 android:tabStripEnabled="true"
-                android:background="#ffffff"></TabWidget>
+                android:background="#ffffff"
+                android:orientation="vertical"></TabWidget>
 
             <FrameLayout
                 android:id="@android:id/tabcontent"

@@ -14,7 +14,7 @@ var config = {
     encrypt: true
   }
 
-
+/*
 var db_connection = new sql.Connection(config, function(err){
 
   db_connection.connect();
@@ -23,13 +23,14 @@ var db_connection = new sql.Connection(config, function(err){
   var partner = recordset[0].partner; 
   });
 }
+*/
 
 var server = ws.createServer(function(connection) {
 	connection.username = null
 	connection.state = 0
 	connection.partner = null
 	connection.on("text", function (str) {
-		console.log(str);
+		broadcast(str);
 /*		if(connection.username === null) {
 		connection.username = str
 		} else {
@@ -72,4 +73,4 @@ var server = ws.createServer(function(connection) {
 */						          
 })
 }
-server.listen(8081)
+server.listen(8080)
